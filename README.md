@@ -7,7 +7,7 @@ tests are designed to be progress from very easy to slightly more substance.
 This should cover basic sanity checks and proxy knowledge like Promises,
 classes, timers, handling API responses.
 
-Tests for adding throttling will provide some minor quality and style checking,
+Test cases for throttling will provide some minor quality and style checking,
 but not too much. The retry test can be worked/talked through last, time
 permitting, to get a better idea of this.
 
