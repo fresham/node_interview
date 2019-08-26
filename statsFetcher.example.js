@@ -1,4 +1,4 @@
-export default class StatsFetcher {
+module.exports = class StatsFetcher {
   constructor(url) {
     this.url = url;
     this.lastFetch = null;
@@ -27,4 +27,4 @@ export default class StatsFetcher {
   timeSinceLastFetch() {
     return Date.now() - (this.lastFetch || 0);
   }
-}
+};

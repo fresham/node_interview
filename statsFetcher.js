@@ -1,2 +1,2 @@
-export default class StatsFetcher {
-}
+module.exports = class StatsFetcher {
+};

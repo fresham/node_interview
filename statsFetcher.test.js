@@ -84,7 +84,7 @@ test('#fetch is throttled to once per minute', async () => {
 
   jest.advanceTimersByTime(40000);
   Date.now = jest.fn(() => start + 70000)
-  await expect(fetcher.fetch()).resolves.toBe({ pings: 1000 });
+  await expect(fetcher.fetch()).resolves.toEqual({ pings: 1000 });
 });
 
 
