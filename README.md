@@ -21,7 +21,7 @@ permitting, to get a better idea of this.
 
 Refer to `statsFetcher.example.js` for an example passing implementation. Async
 errors can be a bit hard to read with Jest, so don't hesitate to offer a little
-more help here.
+extra help here.
 
 ## Todo
 - Add an example of retry functionality
