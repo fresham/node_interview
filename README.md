@@ -14,8 +14,8 @@ permitting, to get a better idea of this.
 ## Instructions
 Run the test suite with `jest --watchAll`, remove the `.skip` call from tests
 one-by-one and work with the candidate to get each one passing in order. Async
-errors may be a bit hard to read with Jest, so don't hesitate to coach a bit
-more through those.
+errors can be a bit hard to read with Jest, so don't hesitate to offer a little
+more help here.
 
 ## Todo
 - Add an example of retry functionality
