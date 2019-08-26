@@ -64,14 +64,17 @@ test('#fetch resolves with values from parsed JSON resopnse', () => {
 });
 
 
+test('#timeSinceLastFetch returns seconds since last fetch', async () => {
+  const start = Date.now();
+  await fetcher.fetch();
+  jest.advanceTimersByTime(30000);
+  Date.now = jest.fn(() => start + 30000)
+  expect(fetcher.timeSinceLastFetch()).toBe(30000);
+});
+
+
 // Avoid `new Date()`, other timers are covered
 test('#fetch is throttled to once per minute', async () => {
-  global.fetch = jest.fn(() => {
-    return new Promise((resolve, reject) => {
-      resolve('{ "pings": 1000 }');
-    });
-  });
-
   const start = Date.now();
   Date.now = jest.fn(() => start)
 
