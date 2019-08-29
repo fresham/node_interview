@@ -13,10 +13,11 @@ permitting, to get a better idea of this.
 
 ## Instructions
 1. clone the repository
-2. copy `statsFetcher.example.js` to `statsFetcher.js` and run tests to ensure
+2. install dependencies (Jest) with `npm install`
+3. copy `statsFetcher.example.js` to `statsFetcher.js` and run tests to ensure
    that they pass; reset `statsFetcher.js`
-3. run the test suite with `jest --watchAll`
-4. remove the `.skip` call from tests one-by-one and work with the candidate to
+4. run the test suite with `jest --watchAll`
+5. remove the `.skip` call from tests one-by-one and work with the candidate to
    get each one passing in order by modifying `statsFetcher.js`.
 
 Refer to `statsFetcher.example.js` for an example passing implementation. Async
