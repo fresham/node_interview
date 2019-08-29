@@ -22,19 +22,19 @@ beforeEach(() => {
 });
 
 
-test('StatsFetcher stores the URL on initialization', () => {
+test.skip('StatsFetcher stores the URL on initialization', () => {
   expect(fetcher.url).toBe(url);
 });
 
 
-test('#fetch returns a Promise', () => {
+test.skip('#fetch returns a Promise', () => {
   jsonResponse = '{}';
   expect.assertions(1);
   return expect(fetcher.fetch()).resolves.toBeDefined();
 });
 
 
-test('#fetch rejects with an error message', () => {
+test.skip('#fetch rejects with an error message', () => {
   const expected_error = '500: Internal Server Error'; 
 
   global.fetch = jest.fn(() => {
@@ -48,7 +48,7 @@ test('#fetch rejects with an error message', () => {
 });
 
 
-test('#fetch calls global fetch function with URL', () => {
+test.skip('#fetch calls global fetch function with URL', () => {
   return fetcher.fetch()
     .then(response => {
       expect(global.fetch.mock.calls[0][0]).toBe(url);
@@ -57,14 +57,14 @@ test('#fetch calls global fetch function with URL', () => {
 });
 
 
-test('#fetch resolves with values from parsed JSON resopnse', () => {
+test.skip('#fetch resolves with values from parsed JSON resopnse', () => {
   expect.assertions(1);
   return fetcher.fetch()
     .then(response => expect(response).toEqual({ pings: 1000 }));
 });
 
 
-test('#timeSinceLastFetch returns seconds since last fetch', async () => {
+test.skip('#timeSinceLastFetch returns seconds since last fetch', async () => {
   const start = Date.now();
   await fetcher.fetch();
   jest.advanceTimersByTime(30000);
@@ -74,7 +74,7 @@ test('#timeSinceLastFetch returns seconds since last fetch', async () => {
 
 
 // Avoid `new Date()`, other timers are covered
-test('#fetch is throttled to once per minute', async () => {
+test.skip('#fetch is throttled to once per minute', async () => {
   const start = Date.now();
   Date.now = jest.fn(() => start)
 
@@ -93,7 +93,7 @@ test('#fetch is throttled to once per minute', async () => {
 
 // Might be difficult to work through in time
 //
-// test('#fetch retries 5 times before rejecting', () => {
+// test.skip('#fetch retries 5 times before rejecting', () => {
 //   const expected_error = '500: Internal Server Error';
 // 
 //   global.fetch = jest.fn(() => {
